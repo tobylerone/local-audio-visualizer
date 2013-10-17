@@ -42,6 +42,7 @@ function dropAndLoad(dropElement, callback, readFormat) {
 function init(arrayBuffer) {
   document.getElementById('instructions').innerHTML = 'Loading ...'
   // Create a new `audioContext` and its `analyser`
+  window.AudioContext = window.AudioContext||window.webkitAudioContext;
   window.audioCtx = new AudioContext()
   window.analyser = audioCtx.createAnalyser()
   // If a sound is still playing, stop it.
